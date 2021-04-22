@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <title>FAO Financials</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="st/st.css"/>
+</head>
+
+<body>
+    <div class="container">
+        <div class="heading">
+            <h1 style="background-color:#ffa500;">Welcome to FAO Financials</h1>
+            <h1>Loan Application</h1>            
+            <h3 style="background-color:white;">Please fill in the below to get your loan application result.</h3>
+            <h3>Personal Information</h3>
+        </div>
+        <div class="form">
+            <form action="/predict" method="POST">
+                <div class="col col1">
+                    <div class="rows row1">
+	                   <b>First Name:</b>
+	                   <label>
+	                       <input type="text" name="First Name" required>
+	                   </label>
+	                </div>
+
+               
+	                <div class="rows row2">
+	                   <b>Last Name:</b>
+	                   <label>
+	                       <input type="text" name="Last Name" required>
+	                   </label>
+	                </div>
+	                
+	                <div class="rows row3">
+	                   <b>Phone number:</b>
+	                   <label>
+	                       <input type="text" name="Phone Number" placeholder="e.g. 7372468208" required>
+	                   </label>
+                    </div>
+                    
+                    <div class="rows row4">
+	                   <b>Gender:</b>
+	                   <label>
+	                       <select name="CODE_GENDER" required>
+	                            <option value="M">Male</option>
+	                            <option value="F">Female</option>
+	                        </select>
+	                   </label>
+                    </div>
+                
+	                <div class="rows row5">
+	                   <b>Do you own cars:</b>
+	                   <label>
+	                       <select name="FLAG_OWN_CAR" required>
+	                            <option value="Y">Yes</option>
+	                            <option value="N">No</option>
+	                        </select>
+	                   </label>
+                    </div>
+                    
+                    <div class="rows row6">
+	                   <b>Do you own real estate:</b>
+	                   <label>
+	                       <select name="FLAG_OWN_REALTY" required>
+	                            <option value="Y">Yes</option>
+	                            <option value="N">No</option>
+	                        </select>
+	                   </label>
+                    </div>
+                    
+                    <div class="rows row7">
+                        <b>How many family members do you have:</b>
+                        <label>
+                		   <input type="text" name="CNT_FAM_MEMBERS" placeholder="e.g. 4" required>
+                        </label>
+                    </div>
+                    
+        	     </div>
+        	     
+                <div class="col col2">
+
+                    <div class="rows row1">
+		                <b>Contract Type:</b>
+		                <label>
+		                    <select name="NAME_CONTRACT_TYPE" required>
+	                            <option value="Cash loans" >Cash loans</option>
+	                            <option value="Revolving loans">Revolving loans</option>
+	                        </select>
+		                </label>
+                    </div>
+	               
+                    <div class="rows row2">
+                        <b>Applicant Annual Income:</b>
+                        <label>
+                		   <input type="text" name="AMT_INCOME_TOTAL"  placeholder="e.g. 100000" required>
+                        </label>
+                    </div>
+                    
+                    <div class="rows row3">
+                        <b>Annuity:</b>
+                        <label>
+                		   <input type="text" name="AMT_ANNUITY"  placeholder="e.g. 100000" required>
+                        </label>
+                    </div>
+                    
+                    <div class="rows row4">
+                        <b>Employment length:</b>
+                        <label>
+                		   <input type="text" name="YEARS_EMPLOYED"  placeholder="No. of years" required>
+                        </label>
+                    </div>
+                    
+                    <div class="rows row5">
+                        <b>Days since last registration change:</b>
+                        <label>
+                		   <input type="text" name="DAYS_REGISTRATION" placeholder="quantity" required>
+                        </label>
+                    </div>
+                    
+                    <div class="rows row6">
+                        <b>Days since last ID document changed:</b>
+                        <label>
+                		   <input type="text" name="DAYS_ID_PUBLISH" placeholder="quantity" required>
+                        </label>
+                    </div>
+                    
+                    <div class="rows row7">
+	                   <b>Region population of your living area:</b>
+	                   <label>
+	                       <input type="text" name="REGION_POPULATION_RELATIVE"  placeholder="e.g. 2000000" required>
+	                   </label>
+                    </div>
+                </div>                
+        </div>
+        
+        <div class="buton">
+            <button type="submit" id="predict">Evaluate Loan Application Result</button>
+	    </div>
+    </div>	
+      
+</body> 
+<p style="text-align:center;"><img src="{{ url_for('static', filename='logo.jpg') }} "></p>     
+</html>
+
+    
